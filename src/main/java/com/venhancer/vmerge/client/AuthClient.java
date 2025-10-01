@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @FeignClient(
     name = "auth-service",
     url = "${auth.service.url:http://localhost:8080}",
-    path = "/auth"
+    path = "/api/auth"
 )
 public interface AuthClient {
     

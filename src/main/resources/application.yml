@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8082
 
 spring:
   application:
@@ -52,7 +52,7 @@ spring:
 # Auth service configuration
 auth:
   service:
-    url: http://localhost:8080
+    url: http://localhost:7070
     client-id: login-service
     client-secret: secret123
 
@@ -60,7 +60,7 @@ auth:
 security:
   oauth2:
     resource:
-      tokenInfoUri: http://localhost:8080/auth/introspect
+      tokenInfoUri: http://localhost:7070/auth/introspect
     client:
       client-id: login-service
       client-secret: secret123
