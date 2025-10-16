@@ -55,12 +55,18 @@ auth:
     url: http://localhost:7070
     client-id: login-service
     client-secret: secret123
+    # JWT Configuration
+    jwks-uri: http://localhost:7070/.well-known/jwks.json
+    issuer-uri: http://localhost:7070
 
 # Security configuration
 security:
   oauth2:
     resource:
-      tokenInfoUri: http://localhost:7070/auth/introspect
+      # JWT Configuration for resource server
+      jwt:
+        issuer-uri: http://localhost:7070
+        jwk-set-uri: http://localhost:7070/.well-known/jwks.json
     client:
       client-id: login-service
       client-secret: secret123
